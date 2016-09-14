@@ -1,0 +1,24 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+version = '1.0'
+buildDir = '../../buildWorkplaceTools'
+
+repositories {
+	mavenLocal()
+	jcenter()
+	mavenCentral()
+	maven {
+        url "http://maven.vaadin.com/vaadin-addons"
+    }
+}
+
+dependencies {
+    compile group: 'org.opencms', name: 'opencms-core', version: '10.5.0'
+}
+
+jar {
+	manifest {
+		attributes 'Implementation-Title': 'OpenCmsDays workplace tools', 'Implementation-Version': version
+	}
+}
