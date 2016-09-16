@@ -1,0 +1,15 @@
+#
+# ------------------------------------------------------------------------
+# Settings for import logging
+# ------------------------------------------------------------------------
+#
+
+log4j.logger.com.[packagename]=DEBUG, mylog
+
+log4j.additivity.[packagename]=false
+log4j.appender.mylog=org.apache.log4j.RollingFileAppender
+log4j.appender.mylog.File=${opencms.logfolder}mylog.log
+log4j.appender.mylog.MaxFileSize=2mb
+log4j.appender.mylog.MaxBackupIndex=15
+log4j.appender.mylog.layout=org.apache.log4j.PatternLayout
+log4j.appender.mylog.layout.ConversionPattern=%d{DATE} %5p [%30.30C:%4L] %m%n

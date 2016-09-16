@@ -1,0 +1,44 @@
+[
+ {
+   "name": "Kerman",
+   "first name": "Bob",
+   "job description": "engineer",
+   "tel number": "555-4711-0815",
+   "gender": "m"
+ },
+ {
+   "name": "Kerman",
+   "first name": "Jeb",
+   "job description": "pilot",
+   "tel number": "555-4711-0816",
+   "gender": "m"
+ },
+ {
+   "name": "Kerman",
+   "first name": "Bill",
+   "job description": "scientist",
+   "tel number": "555-4711-0817",
+   "gender": "m"
+ },
+ {
+   "name": "Kerman",
+   "first name": "Valentina",
+   "job description": "pilot",
+   "tel number": "555-4711-0818",
+   "gender": "w"
+ },
+ {
+   "name": "Kandi",
+   "first name": "Lex",
+   "job description": "engineer",
+   "tel number": "555-4711-0819",
+   "gender": "m"
+ },
+ {
+   "name": "Alga",
+   "first name": "Marti",
+   "job description": "scientist",
+   "tel number": "555-4711-0820",
+   "gender": "w"
+ }
+]

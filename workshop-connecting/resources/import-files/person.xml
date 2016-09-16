@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <person>
+    <name>Kerman</name>
+    <first name>Bob</first name>
+    <job description>engineer</job description>
+    <tel number>555-4711-0815</tel number>
+    <gender>m</gender>
+  </person>
+  <person>
+    <name>Kerman</name>
+    <first name>Jeb</first name>
+    <job description>pilot</job description>
+    <tel number>555-4711-0816</tel number>
+    <gender>m</gender>
+  </person>
+  <person>
+    <name>Kerman</name>
+    <first name>Bill</first name>
+    <job description>scientist</job description>
+    <tel number>555-4711-0817</tel number>
+    <gender>m</gender>
+  </person>
+  <person>
+    <name>Kerman</name>
+    <first name>Valentina</first name>
+    <job description>pilot</job description>
+    <tel number>555-4711-0818</tel number>
+    <gender>w</gender>
+  </person>
+  <person>
+    <name>Kandi</name>
+    <first name>Lex</first name>
+    <job description>engineer</job description>
+    <tel number>555-4711-0819</tel number>
+    <gender>m</gender>
+  </person>
+  <person>
+    <name>Alga</name>
+    <first name>Marti</first name>
+    <job description>scientist</job description>
+    <tel number>555-4711-0820</tel number>
+    <gender>w</gender>
+  </person>
+</root>
