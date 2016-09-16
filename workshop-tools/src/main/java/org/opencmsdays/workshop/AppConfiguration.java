@@ -48,7 +48,7 @@ public class AppConfiguration implements I_CmsWorkplaceAppConfiguration {
 
     public I_CmsWorkplaceApp getAppInstance() {
 
-        return null;
+        return new MyApp();
     }
 
     public String getButtonStyle() {
@@ -63,7 +63,7 @@ public class AppConfiguration implements I_CmsWorkplaceAppConfiguration {
 
     public Resource getIcon() {
 
-        return FontAwesome.AMBULANCE;
+        return FontAwesome.THUMBS_UP;
     }
 
     public String getId() {
