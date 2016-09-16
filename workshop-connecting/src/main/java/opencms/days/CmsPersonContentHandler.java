@@ -31,6 +31,11 @@
 
 package opencms.days;
 
+import org.opencms.file.CmsFile;
+import org.opencms.file.CmsObject;
+import org.opencms.main.CmsException;
+import org.opencms.xml.content.CmsDefaultXmlContentHandler;
+import org.opencms.xml.content.CmsXmlContent;
 
 @SuppressWarnings("javadoc")
 public class CmsPersonContentHandler extends CmsDefaultXmlContentHandler {

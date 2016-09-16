@@ -31,6 +31,9 @@
 
 package opencms.days;
 
+import org.opencms.file.CmsObject;
+import org.opencms.file.CmsUser;
+import org.opencms.notification.A_CmsNotification;
 
 /**
  * Class to send a notification to an OpenCms user with a summary of warnings and
@@ -57,6 +60,8 @@ public class PersonImportNotification extends A_CmsNotification {
      */
     @Override
     protected String generateHtmlMsg() {
+
+        return html;
 
     }
 

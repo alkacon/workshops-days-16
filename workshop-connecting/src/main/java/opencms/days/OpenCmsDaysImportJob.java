@@ -31,6 +31,10 @@
 
 package opencms.days;
 
+import org.opencms.file.CmsObject;
+import org.opencms.scheduler.I_CmsScheduledJob;
+
+import java.util.Map;
 
 public class OpenCmsDaysImportJob implements I_CmsScheduledJob {
 
