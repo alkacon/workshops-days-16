@@ -31,15 +31,32 @@
 
 package org.opencmsdays.workshop;
 
-import org.opencms.ui.apps.A_CmsWorkplaceApp;
-
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import org.opencms.file.CmsObject;
+import org.opencms.file.CmsResource;
+import org.opencms.file.CmsResourceFilter;
+import org.opencms.main.CmsException;
+import org.opencms.main.OpenCms;
+import org.opencms.ui.A_CmsUI;
+import org.opencms.ui.I_CmsDialogContext;
+import org.opencms.ui.I_CmsDialogContext.ContextType;
+import org.opencms.ui.apps.A_CmsWorkplaceApp;
+import org.opencms.ui.apps.CmsFileExplorer;
+import org.opencms.ui.apps.I_CmsContextProvider;
+import org.opencms.ui.components.CmsErrorDialog;
+import org.opencms.ui.components.CmsFileTable;
+import org.opencms.ui.components.CmsFileTableDialogContext;
+import org.opencms.ui.contextmenu.CmsResourceContextMenuBuilder;
+
 import com.vaadin.ui.Component;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.VerticalLayout;
 
 public class MyApp extends A_CmsWorkplaceApp {
+	
+	CmsFileTable m_fileTable;
 
     @Override
     protected LinkedHashMap<String, String> getBreadCrumbForState(String state) {
@@ -51,8 +68,36 @@ public class MyApp extends A_CmsWorkplaceApp {
 
     @Override
     protected Component getComponentForState(String state) {
-
-        return new Label("Hallo World");
+    	VerticalLayout main=new VerticalLayout();
+    	main.setSizeFull();
+    	
+        main.addComponent(new Label("Hallo World"));
+        I_CmsContextProvider contextProvider  =new I_CmsContextProvider() {
+			
+			@Override
+			public I_CmsDialogContext getDialogContext() {
+				CmsFileTableDialogContext context = new CmsFileTableDialogContext(
+			            ContextType.fileTable,
+			            m_fileTable,
+			            m_fileTable.getSelectedResources());
+			        context.setEditableProperties(CmsFileExplorer.INLINE_EDIT_PROPERTIES);
+			        return context;
+			}
+		};
+        
+        m_fileTable=new CmsFileTable(contextProvider);
+        m_fileTable.setMenuBuilder(new CmsResourceContextMenuBuilder());
+        try {
+			CmsResourceFilter filter=CmsResourceFilter.ONLY_VISIBLE.addRequireType(OpenCms.getResourceManager().getResourceType("a-event"));
+			CmsObject cms=A_CmsUI.getCmsObject();
+			List<CmsResource> resources=cms.readResources("/", filter);
+			m_fileTable.fillTable(cms, resources);
+		} catch (CmsException e) {
+			CmsErrorDialog.showErrorDialog(e);
+		}
+        main.addComponent(m_fileTable);
+        main.setExpandRatio(m_fileTable, 2);
+        return main;
     }
 
     @Override
