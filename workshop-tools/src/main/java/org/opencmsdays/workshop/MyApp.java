@@ -54,10 +54,16 @@ import com.vaadin.ui.Component;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 
+/**
+ * Sample app.<p>
+ */
 public class MyApp extends A_CmsWorkplaceApp {
 	
 	CmsFileTable m_fileTable;
 
+    /**
+     * @see org.opencms.ui.apps.A_CmsWorkplaceApp#getBreadCrumbForState(java.lang.String)
+     */
     @Override
     protected LinkedHashMap<String, String> getBreadCrumbForState(String state) {
 
@@ -66,6 +72,9 @@ public class MyApp extends A_CmsWorkplaceApp {
         return crumbs;
     }
 
+    /**
+     * @see org.opencms.ui.apps.A_CmsWorkplaceApp#getComponentForState(java.lang.String)
+     */
     @Override
     protected Component getComponentForState(String state) {
     	VerticalLayout main=new VerticalLayout();
@@ -100,11 +109,12 @@ public class MyApp extends A_CmsWorkplaceApp {
         return main;
     }
 
+    /**
+     * @see org.opencms.ui.apps.A_CmsWorkplaceApp#getSubNavEntries(java.lang.String)
+     */
     @Override
     protected List<NavEntry> getSubNavEntries(String state) {
 
-        // TODO Auto-generated method stub
         return null;
     }
-
 }

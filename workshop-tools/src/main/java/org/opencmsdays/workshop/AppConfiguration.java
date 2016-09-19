@@ -38,44 +38,72 @@ import java.util.Locale;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.server.Resource;
 
+/**
+ * This class determines the app name, icon and the visibility to he current user.<p>
+ * It can also be used to override a default app by using the same id and a higher priority.<p>
+ */
 public class AppConfiguration implements I_CmsWorkplaceAppConfiguration {
 
+    /**
+     * @see org.opencms.ui.apps.I_CmsWorkplaceAppConfiguration#getAppCategory()
+     */
     public String getAppCategory() {
 
         return AppCategoryTest.CATEGORY_ID;
 
     }
 
+    /**
+     * @see org.opencms.ui.apps.I_CmsWorkplaceAppConfiguration#getAppInstance()
+     */
     public I_CmsWorkplaceApp getAppInstance() {
 
         return new MyApp();
     }
 
+    /**
+     * @see org.opencms.ui.apps.I_CmsWorkplaceAppConfiguration#getButtonStyle()
+     */
     public String getButtonStyle() {
 
         return I_CmsAppButtonProvider.BUTTON_STYLE_RED;
     }
 
+    /**
+     * @see org.opencms.ui.apps.I_CmsWorkplaceAppConfiguration#getHelpText(java.util.Locale)
+     */
     public String getHelpText(Locale locale) {
 
-        return null;
+        return "A test app.";
     }
 
+    /**
+     * @see org.opencms.ui.apps.I_CmsWorkplaceAppConfiguration#getIcon()
+     */
     public Resource getIcon() {
 
         return FontAwesome.THUMBS_UP;
     }
 
+    /**
+     * @see org.opencms.ui.apps.I_CmsWorkplaceAppConfiguration#getId()
+     */
     public String getId() {
 
         return "MyApp";
     }
 
+    /**
+     * @see org.opencms.ui.apps.I_CmsWorkplaceAppConfiguration#getName(java.util.Locale)
+     */
     public String getName(Locale locale) {
 
         return "MyApp";
     }
 
+    /**
+     * @see org.opencms.ui.apps.I_CmsWorkplaceAppConfiguration#getOrder()
+     */
     public int getOrder() {
 
         return 0;
@@ -94,7 +122,6 @@ public class AppConfiguration implements I_CmsWorkplaceAppConfiguration {
      */
     public CmsAppVisibilityStatus getVisibility(CmsObject cms) {
 
-        // TODO Auto-generated method stub
-        return new CmsAppVisibilityStatus(true, true, "visible");
+        return new CmsAppVisibilityStatus(true, true, null);
     }
 }

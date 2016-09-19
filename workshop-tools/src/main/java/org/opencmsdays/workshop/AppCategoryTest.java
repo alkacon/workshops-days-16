@@ -35,30 +35,49 @@ import org.opencms.ui.apps.I_CmsAppCategory;
 
 import java.util.Locale;
 
+/**
+ * Sample app category. Used to group apps in the launchpad.<p>
+ */
 public class AppCategoryTest implements I_CmsAppCategory {
 
+    /** The category id. Needs to be unique. */
     public static final String CATEGORY_ID = "Test";
 
+    /**
+     * @see org.opencms.ui.apps.I_CmsAppCategory#getId()
+     */
     public String getId() {
 
         return CATEGORY_ID;
     }
 
+    /**
+     * @see org.opencms.ui.apps.I_CmsAppCategory#getName(java.util.Locale)
+     */
     public String getName(Locale locale) {
 
         return "Test";
     }
 
+    /**
+     * @see org.opencms.ui.apps.I_CmsAppCategory#getOrder()
+     */
     public int getOrder() {
 
-        return 0;
+        return 100;
     }
 
+    /**
+     * @see org.opencms.ui.apps.I_CmsAppCategory#getParentId()
+     */
     public String getParentId() {
 
         return null;
     }
 
+    /**
+     * @see org.opencms.ui.apps.I_CmsAppCategory#getPriority()
+     */
     public int getPriority() {
 
         return 0;
