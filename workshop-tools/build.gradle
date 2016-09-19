@@ -4,6 +4,8 @@ sourceCompatibility = 1.7
 version = '1.0'
 buildDir = '../../buildTools'
 
+def tomcat_update_target='/home/user/workspace/mount/10_5_0-beta_webapp/ROOT/WEB-INF/lib/';
+
 repositories {
 	mavenLocal()
 	jcenter()
@@ -21,4 +23,14 @@ jar {
 	manifest {
 		attributes 'Implementation-Title': 'OpenCmsDays workplace tools', 'Implementation-Version': version
 	}
+	
+	doLast {
+       if (file(tomcat_update_target).exists()){
+            println "copying ${project.buildDir}/libs/${archiveName} to ${tomcat_update_target}"
+            copy {
+                from  "${project.buildDir}/libs/${archiveName}"
+                into tomcat_update_target
+            }
+        }
+    }
 }

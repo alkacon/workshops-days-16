@@ -3,6 +3,7 @@ apply plugin: 'java'
 sourceCompatibility = 1.7
 version = '1.0'
 buildDir = '../../buildConnectingApplications'
+def tomcat_update_target='/home/user/workspace/mount/10_5_0-beta_webapp/ROOT/WEB-INF/lib/';
 
 repositories {
 	mavenLocal()
@@ -21,4 +22,13 @@ jar {
 	manifest {
 		attributes 'Implementation-Title': 'OpenCmsDays connecting external applications', 'Implementation-Version': version
 	}
+    doLast {
+       if (file(tomcat_update_target).exists()){
+            println "copying ${project.buildDir}/libs/${archiveName} to ${tomcat_update_target}"
+            copy {
+                from  "${project.buildDir}/libs/${archiveName}"
+                into tomcat_update_target
+            }
+        }
+    }
 }
