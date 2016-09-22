@@ -4,7 +4,7 @@ sourceCompatibility = 1.7
 version = '1.0'
 buildDir = '../../buildTools'
 
-def tomcat_update_target='/home/user/workspace/mount/10_5_0-beta_webapp/ROOT/WEB-INF/lib/';
+def tomcat_update_target='/home/user/apache-tomcat-8/webapps/opencms/WEB-INF/lib/';
 
 repositories {
 	mavenLocal()
